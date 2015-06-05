@@ -34,18 +34,18 @@ header {
   top:0;
   left:0;
   z-index: 9;
-}
 
-header h1 {
-  color:white;
-  .vevey-stack;
-  font-size: 1.66rem;
-  letter-spacing: 1px;
-  line-height: 2rem;
-  text-decoration: none;
-  float: left;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  h1 {
+    color:white;
+    .vevey-stack;
+    font-size: 1.66rem;
+    letter-spacing: 1px;
+    line-height: 2rem;
+    text-decoration: none;
+    float: left;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 header nav ul {
@@ -97,21 +97,22 @@ section > h3 {
   .deming-stack;
 }
 
+/** HERO **/
 #hero,
 #mission {
   text-align: center;
 
   img {
     border-radius: 100%;
-    border: 10px solid white;
-    box-shadow: 0 0 10px rgba(0,0,0,.5);
-    width: 400px;
+    border: 5px solid white;
+    box-shadow: 0 0 7px rgba(0,0,0,.5);
+    width: 250px;
     height: auto;
   }
   .lead {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    line-height: 2rem;
+    line-height: 1.5rem;
     margin-top: 1rem;
     /**/
     text-shadow: 0 1px 1px #FFF;
@@ -119,135 +120,172 @@ section > h3 {
   }
 }
 
+@media (min-width: 30rem) {
+  #hero,
+  #mission {
+    max-width: ~'calc(100% / 12 * 10)';
+    margin-right: auto;
+    margin-left: auto;
+    img {
+      border-width: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,.5);
+      width: 300px;
+    }
+    .lead {
+      font-size: 1.75rem;
+      line-height: 1.75rem;
+    }
+  }
+}
+@media (min-width: 50rem) {
+  #hero,
+  #mission {
+    max-width: ~'calc(100% / 12 * 8)';
+    margin-right: auto;
+    margin-left: auto;
+    img {
+      width: 400px;
+    }
+    .lead {
+      font-size: 2rem;
+      line-height: 2rem;
+    }
+  }
+}
+
 /* Events */
-.event h2 {
-  .vevey-stack;
-  font-size: 2rem;
-  margin-bottom: .25em;
-}
+.fb-events {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  
+  .event {
+    h3 {
+      .vevey-stack;
+      font-size: 2rem;
+      margin-bottom: .25em;
+    }
+    .date,
+    .location {
+      color: @maintext;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    .date {
+      ul {
+        text-align: center;
+        li {
+          &:nth-child(2) {
+            color: @activetext;
+            font-size: 150%;
+          }
+          &:nth-child(3) {
+            color: @activetext;
+            font-size: 300%;
+            line-height: 105%;
+            margin-bottom: .33em;
+          }
+        }
+      }
+    }
 
-.event .date,
-.event .location {
-  color: @maintext;
-  font-weight: bold;
-  text-transform: uppercase;
-}
+    .location {
+      margin: 1rem 0;
+      text-transform: capitalize;
+      > span {
+        .deming-stack;
+        font-size: 75%;
+        letter-spacing: 2px;
+      }
+    }
+    .cover {
+      img { width: 100%; max-width: 100%; }
+    }
 
-.date ul {
-  text-align: center;
-}
+    .tickets a {
+      .deming-stack;
+      border: 3px solid;
+      border-radius: .4em;
+      display: block;
+      font-size: 1.6em;
+      padding: .4em;
+      text-align: center;
+      text-decoration: none;
+      width: 100%;
 
-.date ul li:nth-child(2) {
-  color: @activetext;
-  font-size: 150%;
-}
-
-.date ul li:nth-child(3) {
-  color: @activetext;
-  font-size: 300%;
-  line-height: 105%;
-  margin-bottom: .33em;
-}
-
-.event .location {
-  margin: 1rem 0;
-  text-transform: capitalize;
-}
-
-.event .location > span {
-  .deming-stack;
-  font-size: 75%;
-  letter-spacing: 2px;
-}
-
-.event .image img { width: 100%; max-width: 100%; }
-
-.event .tickets a {
-  .deming-stack;
-  border: 3px solid;
-  border-radius: .4em;
-  display: block;
-  font-size: 1.6em;
-  padding: .4em;
-  text-align: center;
-  text-decoration: none;
-  width: 100%;
-}
-
-.event .tickets a:hover {
-  background: rgba(158,81,78,.2);
+      &:hover {
+        background: rgba(158,81,78,.2);
+      }
+    }
+  }
 }
 
 /* Members list */
-#members table {
-  width: 100%;
-}
+#members {
+  table {
+    width: 100%;
+    border: none;
+    border-color: transparent;
+    margin: 0;
+    padding: 0;
 
-#members table thead {
-  font-family: Helvetica, Arial, Sans-serif;
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-	text-shadow: 0 1px 1px #FFF;
-  color:@maintext;
-  text-align: left;
-}
+    thead {
+      font-family: Helvetica, Arial, Sans-serif;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-shadow: 0 1px 1px #FFF;
+      color:@maintext;
+      text-align: left;
+      th {
+        border-spacing: 0;
+        border-color: transparent;
+      }
+      a {
+        font-family: Helvetica, Arial, Sans-serif;
+        text-shadow: 0 1px 1px #FFF;
+        color:@maintext;
+        text-decoration: none;
+      }
+    }
+    tbody {
+      border-top: 1px solid black;
+      margin: 0;
+      padding: 0;
 
- table thead a {
-  font-family: Helvetica, Arial, Sans-serif;
-	text-shadow: 0 1px 1px #FFF;
-  color:@maintext;
-  text-decoration: none;
-}
-
-#members table tbody {
-  border-top: 1px solid black;
-}
-
-#members table,
-#members table tbody,
-#members table tbody td {
-  margin: 0;
-  padding: 0;
-}
-
-#members table tbody td {
-  padding: .4em .1em;
-}
-
-#members table tbody p,
-#members table tbody ul {
-  .vevey-stack;
-  font-size: 1.66rem;
-  line-height: 1.9rem;
-}
-
-#bbg tbody tr {
-  border-bottom: 1px dotted black;
-}
-
-#bbg tbody tr:last-child {
-  border-bottom: none;
-}
-
-#bbg tbody tr:nth-child(odd) {
-  background: rgba(125, 116, 87, .1);
-}
-
-#bbg tbody tr:hover {
-  background: rgba(158,81,78,.1);
-}
-
-#bbg td {
-  border-spacing: 0;
-  border-color: transparent;
+      tr {
+        border-bottom: 1px dotted black;
+        &:last-child {
+          border-bottom: none;
+        }
+        &:nth-child(odd) {
+          background: rgba(125, 116, 87, .1);
+        }
+        &:hover {
+          background: rgba(158,81,78,.1);
+        }
+      }
+      td {
+        padding: .4em .1em;
+        border-spacing: 0;
+        border-color: transparent;
+        p,
+        ul {
+          .vevey-stack;
+          font-size: 1.66rem;
+          line-height: 1.9rem;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+  }
 }
 
 /* contact */
-#contact .contact-form {
-  margin-left: -1%;
-  margin-right: -1%;
-}
+
 
 /* footer */
 footer p {

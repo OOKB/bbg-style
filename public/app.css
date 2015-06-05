@@ -669,6 +669,7 @@ section > h3 {
   font-style: normal;
   font-weight: normal;
 }
+/** HERO **/
 #hero,
 #mission {
   text-align: center;
@@ -676,23 +677,64 @@ section > h3 {
 #hero img,
 #mission img {
   border-radius: 100%;
-  border: 10px solid white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  width: 400px;
+  border: 5px solid white;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+  width: 250px;
   height: auto;
 }
 #hero .lead,
 #mission .lead {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  line-height: 2rem;
+  line-height: 1.5rem;
   margin-top: 1rem;
   /**/
   text-shadow: 0 1px 1px #FFF;
   color: rgba(125, 116, 87, 0.9);
 }
+@media (min-width: 30rem) {
+  #hero,
+  #mission {
+    max-width: calc(100% / 12 * 10);
+    margin-right: auto;
+    margin-left: auto;
+  }
+  #hero img,
+  #mission img {
+    border-width: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 300px;
+  }
+  #hero .lead,
+  #mission .lead {
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+  }
+}
+@media (min-width: 50rem) {
+  #hero,
+  #mission {
+    max-width: calc(100% / 12 * 8);
+    margin-right: auto;
+    margin-left: auto;
+  }
+  #hero img,
+  #mission img {
+    width: 400px;
+  }
+  #hero .lead,
+  #mission .lead {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+}
 /* Events */
-.event h2 {
+.fb-events {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.fb-events .event h3 {
   font-family: 'VeveyRegular', Helvetica, Arial, Sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -700,41 +742,41 @@ section > h3 {
   font-size: 2rem;
   margin-bottom: .25em;
 }
-.event .date,
-.event .location {
+.fb-events .event .date,
+.fb-events .event .location {
   color: rgba(125, 116, 87, 0.9);
   font-weight: bold;
   text-transform: uppercase;
 }
-.date ul {
+.fb-events .event .date ul {
   text-align: center;
 }
-.date ul li:nth-child(2) {
+.fb-events .event .date ul li:nth-child(2) {
   color: #9e514e;
   font-size: 150%;
 }
-.date ul li:nth-child(3) {
+.fb-events .event .date ul li:nth-child(3) {
   color: #9e514e;
   font-size: 300%;
   line-height: 105%;
   margin-bottom: .33em;
 }
-.event .location {
+.fb-events .event .location {
   margin: 1rem 0;
   text-transform: capitalize;
 }
-.event .location > span {
+.fb-events .event .location > span {
   font-family: 'DemingEPRegular', Helvetica, Arial, Sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 75%;
   letter-spacing: 2px;
 }
-.event .image img {
+.fb-events .event .cover img {
   width: 100%;
   max-width: 100%;
 }
-.event .tickets a {
+.fb-events .event .tickets a {
   font-family: 'DemingEPRegular', Helvetica, Arial, Sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -747,12 +789,16 @@ section > h3 {
   text-decoration: none;
   width: 100%;
 }
-.event .tickets a:hover {
+.fb-events .event .tickets a:hover {
   background: rgba(158, 81, 78, 0.2);
 }
 /* Members list */
 #members table {
   width: 100%;
+  border: none;
+  border-color: transparent;
+  margin: 0;
+  padding: 0;
 }
 #members table thead {
   font-family: Helvetica, Arial, Sans-serif;
@@ -763,7 +809,11 @@ section > h3 {
   color: rgba(125, 116, 87, 0.9);
   text-align: left;
 }
-table thead a {
+#members table thead th {
+  border-spacing: 0;
+  border-color: transparent;
+}
+#members table thead a {
   font-family: Helvetica, Arial, Sans-serif;
   text-shadow: 0 1px 1px #FFF;
   color: rgba(125, 116, 87, 0.9);
@@ -771,46 +821,39 @@ table thead a {
 }
 #members table tbody {
   border-top: 1px solid black;
-}
-#members table,
-#members table tbody,
-#members table tbody td {
   margin: 0;
   padding: 0;
 }
+#members table tbody tr {
+  border-bottom: 1px dotted black;
+}
+#members table tbody tr:last-child {
+  border-bottom: none;
+}
+#members table tbody tr:nth-child(odd) {
+  background: rgba(125, 116, 87, 0.1);
+}
+#members table tbody tr:hover {
+  background: rgba(158, 81, 78, 0.1);
+}
 #members table tbody td {
   padding: .4em .1em;
+  border-spacing: 0;
+  border-color: transparent;
 }
-#members table tbody p,
-#members table tbody ul {
+#members table tbody td p,
+#members table tbody td ul {
   font-family: 'VeveyRegular', Helvetica, Arial, Sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: 1px;
   font-size: 1.66rem;
   line-height: 1.9rem;
-}
-#bbg tbody tr {
-  border-bottom: 1px dotted black;
-}
-#bbg tbody tr:last-child {
-  border-bottom: none;
-}
-#bbg tbody tr:nth-child(odd) {
-  background: rgba(125, 116, 87, 0.1);
-}
-#bbg tbody tr:hover {
-  background: rgba(158, 81, 78, 0.1);
-}
-#bbg td {
-  border-spacing: 0;
-  border-color: transparent;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 /* contact */
-#contact .contact-form {
-  margin-left: -1%;
-  margin-right: -1%;
-}
 /* footer */
 footer p {
   color: rgba(125, 116, 87, 0.9);
