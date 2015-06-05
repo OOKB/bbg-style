@@ -97,18 +97,26 @@ section > h3 {
   .deming-stack;
 }
 
-#hero, #mission {
+#hero,
+#mission {
   text-align: center;
-}
 
-#mission p {
-  font-size: 2rem;
-  font-weight: bold;
-  line-height: 2rem;
-  margin-top: 1rem;
-  /**/
-	text-shadow: 0 1px 1px #FFF;
-  color:@maintext;
+  img {
+    border-radius: 100%;
+    border: 10px solid white;
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+    width: 400px;
+    height: auto;
+  }
+  .lead {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 2rem;
+    margin-top: 1rem;
+    /**/
+    text-shadow: 0 1px 1px #FFF;
+    color:@maintext;
+  }
 }
 
 /* Events */
