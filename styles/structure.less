@@ -22,7 +22,7 @@
   line-height: 1.618em;
 }
 
-html, 
+html,
 body {
   height: 100%;
   margin: 0;
@@ -30,13 +30,15 @@ body {
   width: 100%;
 }
 
-/* 
-   super simple CF from the very end of here: 
-   http://css-tricks.com/snippets/css/clear-fix/ — only works in IE8+, 
-   so not so super back compatible — but we're looking to the future! 
+/*
+   super simple CF from the very end of here:
+   http://css-tricks.com/snippets/css/clear-fix/ — only works in IE8+,
+   so not so super back compatible — but we're looking to the future!
 */
+.add-clearfix,
 .clearfix::after,
 .group::after,
+.inner::after,
 .row::after {
   content: "";
   display: table;
@@ -64,6 +66,7 @@ body {
 }
 
 .group,
+.inner,
 .row {
   margin: 0 0 2rem 0;
 }
@@ -126,15 +129,16 @@ body {
   }
 
   .group,
+  .inner,
   .row {
     margin: 0 -1rem 2rem -1rem;
   }
 
   /* default 12 column grid */
-  /* 
-     too add or remove, simply add the additional columns, 
-     and then replace "12" in all the calculations below with whatever 
-     number of columns you wish to use. 5, 8, 16, 101, whatever. 
+  /*
+     too add or remove, simply add the additional columns,
+     and then replace "12" in all the calculations below with whatever
+     number of columns you wish to use. 5, 8, 16, 101, whatever.
      We're working on a clever-er way to make this work.
      You'll need to add classes up above too if you make more columns.
   */
@@ -175,7 +179,7 @@ body {
     display: none;
     visibility: hidden;
   }
-  
+
 }
 
 /* Base Styles
