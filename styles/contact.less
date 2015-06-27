@@ -1,3 +1,5 @@
+@import "http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css";
+
 /**
   This is compiled from best practices and interesting ideas via the following:
     - https://css-tricks.com/tips-for-creating-great-web-forms/
@@ -344,11 +346,15 @@ input[type="radio"] {
   background: lighten(@ookb-red, 44%);
 }
 
+.form-group span { display: none; }
+.form-group span.glyphicon { display: inline-block; }
+
 /* switch glyphicons to fontawesome */
 .glyphicon {
   position: relative;
   top: 1px;
   display: inline-block;
+  vertical-align: middle;
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
@@ -359,26 +365,21 @@ input[type="radio"] {
 
 .glyphicon-remove::before {
   content: "\f00d";
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .glyphicon-ok::before {
   content: "\f00c";
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .glyphicon-warning-sign::before {
   content: "\f071";
+  display: inline-block;
+  vertical-align: middle;
 }
-
-/** some other tweaks? */
-
-// some helpful thinking examples: http://formvalidation.io/examples/
-/*
-  Nice logins:
-  https://bank.simple.com/signin
-  https://www.paypal.com/signin/?country.x=US&locale.x=en_US
-  https://thenounproject.com/accounts/login/
-  https://icloud.com/
-*/
 
 .form-group {
   position: relative;
@@ -386,7 +387,8 @@ input[type="radio"] {
 
 .form-control-feedback {
   position: absolute;
-  right: -1.5em;
-  top: 1em;
+  right: .5em;
+  height: 2em;
+  line-height: 1.75em;
 }
 

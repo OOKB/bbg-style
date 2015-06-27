@@ -7,6 +7,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import "http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css";
 html,
 body,
 div,
@@ -1186,19 +1187,26 @@ input[type="radio"] {
 .has-error.checkbox-inline label,
 .has-error.radio label,
 .has-error.radio-inline label {
-  color: #b75051;
-  outline-color: #b75051;
+  color: #9e514e;
+  outline-color: #9e514e;
 }
 .has-error .form-control {
-  border-color: #b75051;
-  outline-color: #b75051;
-  background: #f8efef;
+  border-color: #9e514e;
+  outline-color: #9e514e;
+  background: #efdede;
+}
+.form-group span {
+  display: none;
+}
+.form-group span.glyphicon {
+  display: inline-block;
 }
 /* switch glyphicons to fontawesome */
 .glyphicon {
   position: relative;
   top: 1px;
   display: inline-block;
+  vertical-align: middle;
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
@@ -1208,26 +1216,25 @@ input[type="radio"] {
 }
 .glyphicon-remove::before {
   content: "\f00d";
+  display: inline-block;
+  vertical-align: middle;
 }
 .glyphicon-ok::before {
   content: "\f00c";
+  display: inline-block;
+  vertical-align: middle;
 }
 .glyphicon-warning-sign::before {
   content: "\f071";
+  display: inline-block;
+  vertical-align: middle;
 }
-/** some other tweaks? */
-/*
-  Nice logins:
-  https://bank.simple.com/signin
-  https://www.paypal.com/signin/?country.x=US&locale.x=en_US
-  https://thenounproject.com/accounts/login/
-  https://icloud.com/
-*/
 .form-group {
   position: relative;
 }
 .form-control-feedback {
   position: absolute;
-  right: -1.5em;
-  top: 1em;
+  right: .5em;
+  height: 2em;
+  line-height: 1.75em;
 }
