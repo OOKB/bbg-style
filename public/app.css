@@ -222,6 +222,15 @@ body {
   display: table;
   clear: both;
 }
+.show {
+  display: block !important;
+}
+.hidden {
+  display: none !important;
+}
+.invisible {
+  visibility: hidden;
+}
 .text-center,
 .center-text {
   text-align: center;
@@ -898,6 +907,7 @@ form select,
 fieldset select,
 form textarea,
 fieldset textarea {
+  font-family: inherit;
   font-size: inherit;
   line-height: normal;
 }
@@ -912,6 +922,12 @@ fieldset .message #form-url {
   width: 100%;
   max-width: 100%;
   margin-bottom: .25em;
+}
+#contact form button[type="submit"] {
+  margin: 0 1em;
+  margin-left: calc(26%);
+  width: calc(74%);
+  float: left;
 }
 form .group .group {
   margin: 0;
@@ -1050,9 +1066,6 @@ label > .label-body {
   display: inline-block;
   margin-left: .5rem;
   font-weight: normal;
-}
-label {
-  display: none;
 }
 /* Help Text */
 .help-block {
@@ -1195,18 +1208,11 @@ input[type="radio"] {
   outline-color: #9e514e;
   background: #efdede;
 }
-.form-group span {
-  display: none;
-}
-.form-group span.glyphicon {
-  display: inline-block;
-}
 /* switch glyphicons to fontawesome */
 .glyphicon {
   position: relative;
   top: 1px;
   display: inline-block;
-  vertical-align: middle;
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
@@ -1216,25 +1222,43 @@ input[type="radio"] {
 }
 .glyphicon-remove::before {
   content: "\f00d";
-  display: inline-block;
-  vertical-align: middle;
 }
 .glyphicon-ok::before {
   content: "\f00c";
-  display: inline-block;
-  vertical-align: middle;
 }
 .glyphicon-warning-sign::before {
   content: "\f071";
-  display: inline-block;
-  vertical-align: middle;
 }
+/** some other tweaks? */
+/*
+  Nice logins:
+  https://bank.simple.com/signin
+  https://www.paypal.com/signin/?country.x=US&locale.x=en_US
+  https://thenounproject.com/accounts/login/
+  https://icloud.com/
+*/
 .form-group {
   position: relative;
 }
 .form-control-feedback {
   position: absolute;
-  right: .5em;
-  height: 2em;
-  line-height: 1.75em;
+  right: -1em;
+  top: .25em;
+}
+[for="url-355711833"] {
+  display: none !important;
+}
+.form-group {
+  margin: 0;
+}
+[class*='col-'] {
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+.col-sm-3 {
+  width: calc(25%);
+}
+.col-sm-9 {
+  width: calc(75%);
 }
