@@ -923,12 +923,6 @@ fieldset .message #form-url {
   max-width: 100%;
   margin-bottom: .25em;
 }
-#contact form button[type="submit"] {
-  margin: 0 1em;
-  margin-left: calc(26%);
-  width: calc(74%);
-  float: left;
-}
 form .group .group {
   margin: 0;
 }
@@ -1251,14 +1245,22 @@ input[type="radio"] {
 .form-group {
   margin: 0;
 }
-[class*='col-'] {
-  margin: 0;
-  padding: 0;
-  float: left;
-}
-.col-sm-3 {
-  width: calc(25%);
-}
-.col-sm-9 {
-  width: calc(75%);
+@media (min-width: 768px) {
+  #contact form button[type="submit"] {
+    margin: 0 1em;
+    margin-left: calc(25%);
+    width: calc(75%);
+    float: left;
+  }
+  [class*='col-'] {
+    margin: 0;
+    padding: 0;
+    float: left;
+  }
+  .col-sm-3 {
+    width: calc(25%);
+  }
+  .col-sm-9 {
+    width: calc(75%);
+  }
 }

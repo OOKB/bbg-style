@@ -32,13 +32,6 @@ fieldset {
   }
 }
 
-#contact form button[type="submit"] {
-  margin: 0 1em;
-  margin-left: calc(100% / 12 * 03 + 1em);
-  width: calc(100% / 12 * 9 - 1em);
-  float: left;
-}
-
 form {
   .group .group {
     margin: 0;
@@ -404,11 +397,20 @@ input[type="radio"] {
   margin: 0;
 }
 
-[class*='col-'] {
-  margin: 0;
-  padding: 0;
-  float: left;
+@media (min-width: 768px) {
+  #contact form button[type="submit"] {
+    margin: 0 1em;
+    margin-left: calc(100% / 12 * 3);
+    width: calc(100% / 12 * 9);
+    float: left;
+  }
+
+  [class*='col-'] {
+    margin: 0;
+    padding: 0;
+    float: left;
+  }
+  .col-sm-3 { width: calc(100% / 12 * 3); }
+  .col-sm-9 { width: calc(100% / 12 * 9); }
 }
-.col-sm-3 { width: calc(100% / 12 * 3); }
-.col-sm-9 { width: calc(100% / 12 * 9); }
 
